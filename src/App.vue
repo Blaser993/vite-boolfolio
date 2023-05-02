@@ -2,9 +2,10 @@
 import Projects from './components/Projects.vue'
 
 export default {
-  components:[
-    Projects
-  ]
+  components:{
+    Projects,
+  }
+    
 }
 
 </script>

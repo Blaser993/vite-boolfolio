@@ -1,7 +1,7 @@
 <template>
     <div>
         <p v-for="project in projects" :key="project.id">
-            {{ projects.title }}
+            {{ project.title }}
         </p>
     </div>
 </template>
@@ -16,11 +16,12 @@ export default {
     },
     methods: {
         fetchProjects() {
-            axios.get('127.0.0.1:8000/api/projects')
+            axios.get('http://127.0.0.1:8000/api/projects')
             .then(res => {
                 console.log(res)
-                const {results} = res.data
-                this.projects = results
+                const {projects} = res.data
+                console.log(projects)
+                this.projects = projects
             })
             .catch(err => {
                 console.log(err)
@@ -28,6 +29,7 @@ export default {
         }
     },
     mounted() {
+        console.log('ciao')
         this.fetchProjects()
     },
 }
