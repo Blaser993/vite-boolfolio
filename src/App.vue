@@ -1,19 +1,18 @@
 <script>
-import Projects from './components/Projects.vue'
-
+import NavBar from './components/partials/Navbar.vue'
 export default {
   components:{
-    Projects,
+    NavBar,
   }
-    
 }
+
+
 
 </script>
 
 <template>
-  <div class="container">
-    <Projects />
-  </div>
+  <NavBar></NavBar>
+  <router-view></router-view>
 </template>
 
 <style scoped>
